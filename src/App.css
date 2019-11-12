@@ -81,3 +81,11 @@ header .header_nav_options .enter_form span {
   margin-bottom: 0.4rem;
   cursor: default;
 }
+section {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+section.join_steps > div {
+  display: flex;
+}

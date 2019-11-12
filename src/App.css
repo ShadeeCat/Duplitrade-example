@@ -89,3 +89,37 @@ section {
 section.join_steps > div {
   display: flex;
 }
+
+table.charts { 
+  --dark-color: #444;
+  width: calc(100% - 2 * 1rem); 
+  border-collapse: collapse; 
+  margin: 1rem;
+  border: 1px solid var(--dark-color);
+}
+table.charts thead tr { background-color: #333; color: white; }
+table.charts thead tr th:not(:last-child) {
+  border-right: 1px solid currentColor;
+}
+
+table.charts tbody tr:not(:last-child) {
+  border-bottom: 1px solid var(--dark-color);
+}
+table.charts tbody tr td {
+  padding: .5rem;
+  text-align: right;
+}
+table.charts tbody tr td:first-child { text-align: left; } 
+table.charts tbody tr td.chart-net_pl.positive { color: green; } 
+table.charts tbody tr td.chart-net_pl.negative { color: darkred; } 
+
+table.charts tbody td.chart-duplicate-action button {
+  -webkit-appearance: value;
+  -moz-appearance:    value;
+  appearance:         value;
+  border: none;
+  background-color: mediumslateblue;
+  width: 100%;
+  height: 100%;
+  padding: .5rem 0;
+}

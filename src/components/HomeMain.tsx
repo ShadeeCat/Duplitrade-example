@@ -36,10 +36,11 @@ const JoinSteps = (props: { picsList: Picture[] }) => {
 		<h2>How do I join?</h2>
 		<div>
 			{ props.picsList.map((singlePic, index) => {
-				return <div key={index}>
-					<p>{singlePic.id}</p>
+				return <div className="single_step" key={index}>
+					<p className="num_of_step">{singlePic.id}</p>
 					<img src={`images/how-do-join/${ singlePic.pic }`} alt={singlePic.text} />
-					<p>{singlePic.text}</p>
+					<p className="step_description">{singlePic.text}</p>
+					<div className="triangle"></div>
 				</div>
 			}) }
 		</div>
@@ -48,7 +49,7 @@ const JoinSteps = (props: { picsList: Picture[] }) => {
 
 const Partners = (props: { partnersPicsList: Partners[] }) => {
 	console.log(props)
-	return <section>
+	return <section className="partner_brokers">
 		<h2>Our Partner Brokers</h2>
 		<div>
 			{ props.partnersPicsList.map((singlePic, index) => {

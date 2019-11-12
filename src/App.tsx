@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-do
 import { Header } from "./components/Header";
 import { HomeMain } from "./components/HomeMain";
 import { StrategyProviders } from "./components/StrategyCharts";
+import { Footer } from "./components/Footer";
 
 import './App.css';
 
@@ -20,6 +21,7 @@ class App extends React.Component {
 							<StrategyProviders />
 						</Route>
 					</Switch>
+					<Footer />
 				</div>
 		</Router>
 	}

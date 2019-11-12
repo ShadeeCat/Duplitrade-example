@@ -33,7 +33,8 @@ export class StrategyProviders extends React.Component<{}, StrategyProvidersStat
 	}
 
 	render () {
-		return <table className="charts">
+		return <div className="parentChart"> 
+		<table className="charts">
 			<thead>
 				<tr>
 					<th>Strategy</th>
@@ -55,6 +56,7 @@ export class StrategyProviders extends React.Component<{}, StrategyProvidersStat
 			}
 			</tbody>
 		</table>
+		</div>
 	}
 }
 

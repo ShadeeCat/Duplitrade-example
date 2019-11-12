@@ -1,8 +1,11 @@
 :root {
   --header-footer-bg: #333;
-  --bg-header-buttons: #129907;
-}
+  --green-buttons: #129907;
+  --green-buttons-hover: rgb(21, 182, 8);
+  --dark-color: #444;
+  --sections-color: #f2f2f2;
 
+}
 header {
   background: var(--header-footer-bg);
   text-align: center;
@@ -17,15 +20,18 @@ header .header_nav_options {
   margin: auto;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 header .header_nav_options nav ul {
   display: flex;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 header .header_nav_options nav ul li {
   list-style-type: none;
-  padding-right: 1rem;
+  padding: .5rem 1rem .5rem 0rem;
 }
 header .header_nav_options nav ul li a {
   color: #b0b0b0;
@@ -58,11 +64,11 @@ header .header_nav_options .enter_form button {
   cursor: pointer;
 }
 header .header_nav_options .enter_form button:active {
-  background-color: var(--bg-header-buttons);
-  border-color: var(--bg-header-buttons);
+  background-color: var(--green-buttons);
+  border-color: var(--green-buttons);
 }
 header .header_nav_options .enter_form button.login {
-  color: var(--bg-header-buttons);
+  color: var(--green-buttons);
 }
 header .header_nav_options .enter_form button.login:hover {
   color: white;
@@ -72,7 +78,10 @@ header .header_nav_options .enter_form button.login:hover {
 }
 header .header_nav_options .enter_form button.sign_up {
  color: #fff;
- background: var(--bg-header-buttons)
+ background: var(--green-buttons)
+}
+header .header_nav_options .enter_form button.sign_up:hover{
+  background: var(--green-buttons-hover)
 }
 header .header_nav_options .enter_form span {
   margin: 0 1rem;
@@ -81,23 +90,183 @@ header .header_nav_options .enter_form span {
   margin-bottom: 0.4rem;
   cursor: default;
 }
-section {
+section.join_steps {
   max-width: 1000px;
   margin: auto;
   text-align: center;
+  padding: 0 1rem;
+}
+section h2 {
+  color: rgb(52, 52, 52);
+  font-weight: normal;
+  margin: 0;
+  padding: 2rem 0;
 }
 section.join_steps > div {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+section.join_steps .single_step {
+  position: relative;
+  width: 230px;
+  background-color: #f2f2f2;
+  margin-right: .7rem;
+}
+section.join_steps .single_step .num_of_step {
+  width: min-content;
+  margin: 1rem auto;
+  border: 1px solid #fff;
+  padding: 5px 12px;
+  border-radius: 100%;
+  background: #fff;
+  font-weight: bold;
+  color: rgb(86, 140, 243);
+}
+section.join_steps .single_step p.step_description {
+  max-width: 190px;
+  margin: auto;
+  padding: 1rem 0 2rem;
+  color: rgb(51, 51, 51);
+}
+section.join_steps .single_step:before {
+  content: "";
+  position: absolute;
+  height: 95px;
+  width: .7rem;
+  background: #568cf3;
+  left: -.7rem;
+  top: 30%;
+}
+section.join_steps .single_step:first-of-type:before,
+section.join_steps .single_step:first-of-type .triangle:before,
+section.join_steps .single_step:first-of-type .triangle:after {
+  content: none;
+}
+section.join_steps .triangle {
+  position: absolute;
+  left: 0px;
+  top: calc(50% - 48px);
+  height: 100px;
+  width: 40px;
+  overflow: hidden;
+}
+section.join_steps .triangle:before {
+  left: -90px;
+  transform: rotate(45deg) skew(10deg);
+  transform-origin: 50% 50%;
+  background: rgb(86, 140, 243);
+}
+section.join_steps .triangle:after {
+  left: -90px;
+  top: -10px;
+  transform: rotate(-45deg) skew(-10deg);
+  transform-origin: 50% 50%;
+  background: rgb(86, 140, 243);
+}
+section.join_steps .triangle:after,
+section.join_steps .triangle:before {
+  position: absolute;
+  content: "";
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+}
+section.partner_brokers {
+  text-align: center;
+  background: var(--sections-color);
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+section.partner_brokers div {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 0;
+}
+section.partner_brokers img {
+  padding: 1rem;
+}
+section.partner_brokers button {
+  padding: 1rem 2.5rem;
+  background-color: var(--green-buttons);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+}
+section.partner_brokers button:hover{
+  background-color: var(--green-buttons-hover);
+  cursor: pointer;
 }
 
+footer {
+  background: var(--header-footer-bg);
+  color: #fff;
+  padding: 0 1rem;
+}
+footer a {
+  color: inherit;
+}
+footer .footer_nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 1rem;
+}
+footer .footer_nav ul {
+  width: 150px;
+}
+footer .footer_nav ul h3 {
+  font-weight: normal;
+  margin-bottom: .5rem;
+}
+footer .footer_nav ul li {
+  list-style-type: none;
+  margin-top: .2rem; 
+}
+footer .footer_nav ul li a {
+  color: #b0b0b0;
+  text-decoration: none;
+}
+footer .footer_nav ul li a:hover {
+  color: #fff;
+}
+footer div * {
+  font-size: 0.75rem;
+  text-align: center;
+  max-width: 850px;
+  margin: auto;
+}
+footer div .privacy_policy {
+  width: 190px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+}
+footer div .licence {
+  max-width: 700px;
+  padding: 40px 0;
+}
+footer div.disclaimer p {
+  text-align: start;
+  font-size: 0.7rem;
+}
+
+.parentChart {
+  overflow-x: auto;
+}
 table.charts { 
-  --dark-color: #444;
   width: calc(100% - 2 * 1rem); 
   border-collapse: collapse; 
   margin: 1rem;
   border: 1px solid var(--dark-color);
 }
-table.charts thead tr { background-color: #333; color: white; }
+table.charts thead tr { 
+  background-color: var(--header-footer-bg); 
+  color: white; 
+}
 table.charts thead tr th:not(:last-child) {
   border-right: 1px solid currentColor;
 }
@@ -106,20 +275,35 @@ table.charts tbody tr:not(:last-child) {
   border-bottom: 1px solid var(--dark-color);
 }
 table.charts tbody tr td {
-  padding: .5rem;
+  padding: .5rem 2rem;
   text-align: right;
 }
-table.charts tbody tr td:first-child { text-align: left; } 
-table.charts tbody tr td.chart-net_pl.positive { color: green; } 
-table.charts tbody tr td.chart-net_pl.negative { color: darkred; } 
+table.charts tbody tr td:first-child { 
+  text-align: left; 
+  color: rgb(86, 140, 243);
+} 
+table.charts tbody tr td.chart-net_pl.positive {
+  font-weight: bold; 
+  color: green; 
+} 
+table.charts tbody tr td.chart-net_pl.negative { 
+  font-weight: bold;
+  color: #000; 
+} 
 
 table.charts tbody td.chart-duplicate-action button {
-  -webkit-appearance: value;
-  -moz-appearance:    value;
-  appearance:         value;
   border: none;
-  background-color: mediumslateblue;
+  background-color: rgb(16, 96, 255);
+  color: #fff;
   width: 100%;
   height: 100%;
-  padding: .5rem 0;
+  padding: 0.5rem;
+}
+
+/*mobile responsive changes*/
+
+@media screen and (max-width: 800px) {
+  header .header_nav_options {
+    justify-content: center;
+  }
 }

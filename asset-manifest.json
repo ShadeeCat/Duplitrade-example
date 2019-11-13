@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/duplitrade-test/static/css/main.a46e67ad.chunk.css",
+    "main.js": "/duplitrade-test/static/js/main.50269f03.chunk.js",
+    "main.js.map": "/duplitrade-test/static/js/main.50269f03.chunk.js.map",
+    "runtime-main.js": "/duplitrade-test/static/js/runtime-main.d216d059.js",
+    "runtime-main.js.map": "/duplitrade-test/static/js/runtime-main.d216d059.js.map",
+    "static/js/2.8a3255a5.chunk.js": "/duplitrade-test/static/js/2.8a3255a5.chunk.js",
+    "static/js/2.8a3255a5.chunk.js.map": "/duplitrade-test/static/js/2.8a3255a5.chunk.js.map",
+    "index.html": "/duplitrade-test/index.html",
+    "precache-manifest.c48b3cd192468046d947f2add1b2c97a.js": "/duplitrade-test/precache-manifest.c48b3cd192468046d947f2add1b2c97a.js",
+    "service-worker.js": "/duplitrade-test/service-worker.js",
+    "static/css/main.a46e67ad.chunk.css.map": "/duplitrade-test/static/css/main.a46e67ad.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d216d059.js",
+    "static/js/2.8a3255a5.chunk.js",
+    "static/css/main.a46e67ad.chunk.css",
+    "static/js/main.50269f03.chunk.js"
+  ]
+}

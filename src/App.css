@@ -285,6 +285,7 @@ table.charts tbody tr td:first-child {
 table.charts tbody tr td.chart-net_pl.positive {
   font-weight: bold; 
   color: green; 
+  white-space: nowrap;
 } 
 table.charts tbody tr td.chart-net_pl.negative { 
   font-weight: bold;

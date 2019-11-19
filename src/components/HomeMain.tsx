@@ -23,7 +23,6 @@ export class HomeMain extends React.Component<{}, { dataPics: Picture[], partner
 		})
 	}
 	render() {
-		console.log(this.state.partners)
 		return <> 
 			<JoinSteps picsList={ this.state.dataPics } />
 			<Partners partnersPicsList={ this.state.partners } />
@@ -48,7 +47,6 @@ const JoinSteps = (props: { picsList: Picture[] }) => {
 }
 
 const Partners = (props: { partnersPicsList: Partners[] }) => {
-	console.log(props)
 	return <section className="partner_brokers">
 		<h2>Our Partner Brokers</h2>
 		<div>

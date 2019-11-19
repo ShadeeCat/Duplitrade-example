@@ -12,24 +12,29 @@ interface Chart {
 	followers: number
 }
 interface StrategyProvidersState {
-	dataChart: Chart[]
+	dataChart: Chart[],
+	followersLotToFew: boolean
 }
 export class StrategyProviders extends React.Component<{}, StrategyProvidersState> {
 	state: StrategyProvidersState = {
 		dataChart: [],
-
+		followersLotToFew: true
 	}
 	componentDidMount() {
 		fetch("data-api/data.json")
 		.then(res => res.json())
 		.then((data: Chart[]) => {
-			this.setState({ dataChart: data.sort((c1, c2) => c2.followers - c1.followers) })
+			this.setState({ dataChart: data })
 		})
 	}
 
 	sortByFollowers = () => {
-		const list = this.state.dataChart
-		this.setState({ dataChart: list.reverse() })
+		const list = this.state.dataChart;
+		this.setState({ dataChart: list.sort((c1, c2) => c2.followers - c1.followers), followersLotToFew: false })
+	}
+	sortReverseByFollowers = () => {
+		const list = this.state.dataChart;
+		this.setState({ dataChart: list.sort((c1, c2) => c1.followers - c2.followers), followersLotToFew: true })	
 	}
 
 	render () {
@@ -44,7 +49,7 @@ export class StrategyProviders extends React.Component<{}, StrategyProvidersStat
 					<th>Win %</th>
 					<th>Profit Factor</th>
 					<th>Weeks</th>
-					<th onClick={ this.sortByFollowers }>Followers</th>
+					<th onClick={ this.state.followersLotToFew ? this.sortByFollowers : this.sortReverseByFollowers }>Followers</th>
 					<th></th>
 				</tr>
 			</thead>
